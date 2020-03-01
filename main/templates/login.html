@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+<div class="container col-3"></br>
+    <p class="text-center col-sm-9"><strong style="font-size: 30px;">Login</strong></p>
+    
+    <form  method="POST">{% csrf_token %}
+        {{form.as_p}}
+        <button type="submit" class="btn btn-outline-primary">Login</button></br>
+    </form></br>
+    Jika Anda Belum Punya Akun, <a href="/register"><strong>Register</strong></a>
+    </div>
+{% endblock %}
+   
+  

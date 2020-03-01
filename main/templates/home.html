@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+
+
+{% block content %}
+<div class="container col-7"></br>
+    <div class="row">
+        {% for content in Blog %}&nbsp;
+        <div class="card text-white bg-primary mb-3" style="width: 18rem;">
+            <img class="card-img-top" src="" alt="Card image cap">
+            <div class="card-body">
+            <h5 class="card-title">{{ content.title  }}</h5>
+            <p>{{content.published}}</p>
+            <p>{{ content.content|safe }}</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+            </p> 
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
+
+  

@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-7 col-md-9">
+                <h3>{{blog.title}}</h3>
+                <p>Published {{ blog.published }}</p>
+                {{blog.content|safe}}
+            </div>
+            <ul class="collapse show"></br>
+                {% for blog in sidebar %}
+                    {% if forloop.counter0 == this_id %}
+                        <li class="active">
+                            <div class="card-header" id="headingOne">{{blog.title}}<br>(Viewing)</div>
+                        </li>
+                    {% else %}
+                        <div class="accordion" id="accordionExample">
+                            <div class="card">
+                            <div class="card-header" id="headingOne">{{blog.title}}</div>
+                            <h class="mb-0" id="#sidebar">
+                                <p style="justify-content: center; align-items: center; display: flex;">
+                                    <a href="/{{blog.blog_slug}}">
+                                        <button class="btn btn-info" href type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                            Go
+                                        </button>
+                                    </a>
+                                </p>
+                            </h2>
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+{% endblock %}
+   
+
+
+  
+

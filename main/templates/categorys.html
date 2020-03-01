@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container col-sm-6"></br>
+    <div class="row">
+        {% for blogs, partone in part_ones.items  %}
+        <p style="margin-left: 20px;">
+            <div class="card bg-light mb-3" style="max-width: 18rem;">
+                <a href="{{partone}}", style="color: #000">
+                <!-- <div class="card-header">Category</div> -->
+                <div class="card-body">
+                  <h5 class="card-title">{{ blogs.blog_series }}</h5>
+                  <p class="card-text">{{ blogs.series_summary }}</p>
+                </div>
+              </a>
+              </div>
+        </p>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
+  
+

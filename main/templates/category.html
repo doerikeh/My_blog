@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+
+
+{% block content %}
+<div class="container col-sm-7"></br>
+    <div class="row">
+            {% for cat in categories %}
+                <div class="card bg-light mb-3" style="max-width: 18rem; margin-left: 30px;">
+                    <a href="{{ cat.category_slug }}", style="color: #000">
+                    <!-- <div class="card-header">Category</div> -->
+                    <div class="card-body">
+                    <h5 class="card-title">{{ cat.blog_category }}</h5>
+                    <p class="card-text">{{ cat.category_summary }}</p>
+                    </div>
+                </a></div>
+            {% endfor %}
+    </div>
+</div>
+{% endblock %}
+   
+
+  
+

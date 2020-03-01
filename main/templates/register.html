@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+<div class="container col-7"></br>
+    <form method="POST">{% csrf_token %}
+        {{form.as_p}}
+        <button type="submit" class="btn btn-outline-primary">Register</button></br>
+    </form>
+    Sudah Punya Akun, <a href="/login"><strong>Login</strong></a> Instead.
+</div>
+{% endblock %}
+   
+  
