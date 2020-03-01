@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+<nav class="navbar sticky-top navbar-dark bg-dark navbar-expand-sm">
   <div class="container">
     <a class="navbar-brand" href="/">MariPython</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -7,6 +7,9 @@
   
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="">Contact</a>
+        </li>
         {% if user.is_authenticated %}
           <li class="nav-item active">
             <a class="nav-link" href="/account">{{user.username}}</a>
