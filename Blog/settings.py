@@ -38,9 +38,14 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'jet_django',
+
     'main',
     'tinymce',
 ]
+
+JET_PROJECT = 'blog_14'
+JET_TOKEN = '270316d7-1983-4d21-af1b-14a0b974bfb6' 
 
 TINYMCE_DEFAULT_CONFIG = {
     'height': 360,
@@ -157,5 +162,5 @@ STATICFILES_DIRS = [
 ]
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'static_cdn')
 

@@ -7,6 +7,7 @@
     {% include "include/css.html" %}
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdn.tiny.cloud/1/oxem50uv7a6ypd28mmcommsapjk21zbt96sllj8auya0f7qu/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
 
     <!-- Bootstrap CSS -->
     
@@ -18,6 +19,8 @@
     {% include "include/toasts.html" %}
     
     {% block content %}{% endblock %}
+
+    {% include "include/footer.html" %}
     <!-- Optional JavaScript -->
     {% if messages %}
       <script>
@@ -28,5 +31,6 @@
     {% endif %}
     {% include "include/js.html" %}
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+ 
   </body>
 </html>

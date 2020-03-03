@@ -7,29 +7,31 @@
   
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="">Contact</a>
-        </li>
+        
         {% if user.is_authenticated %}
           <li class="nav-item active">
             <a class="nav-link" href="/account">{{user.username}}</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link disabled" href="/logout">Logout</a>
+            <a class="nav-link disabled" href="logout/">Logout</a>
           </li>
         {% else %}
           <li class="nav-item">
-            <a class="nav-link" href="/register">Register</a>
+            <a class="nav-link" href="register/">Register</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link disabled" href="/login">Login</a>
+            <a class="nav-link disabled" href="login/">Login</a>
           </li>
         {% endif %}
+        <li class="nav-item active">
+          <a class="nav-link" href="contact/">Contact</a>
+        </li>
       </ul>
-      <form class="form-inline my-2 my-lg-0 text-white">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-      </form>
+      <form class="form-inline">
+          <input class="form-control form-control-sm mr-3 w-75" type="text" placeholder="Search"
+            aria-label="Search">
+            <i class="fas fa-search" style="color: aliceblue;"></i>
+        </form>
     </div>
   </div>
     

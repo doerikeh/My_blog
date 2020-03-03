@@ -16,8 +16,12 @@ class BlogAdmin(admin.ModelAdmin):
         models.TextField: {'widget': TinyMCE(attrs={'cols': 80, 'rows': 30})}
     }
 
+    list_display_links = ('title',)
+    list_filter = ('title', 'blog_series')
+    ordering = ('published', )
     list_display = ['title', 'published']
     date_hierarchy = 'published'
+    search_fields = ('title', 'content', 'published')
 
 
 

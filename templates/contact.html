@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block content %}
+<div class="card" style="background-color: #5b74d9; border-color: white;">
+    <div class="card-body">
+        <div class="container text-center">
+            <p style="color: white; font-size: 20px; align-items: center; justify-content: center; font-weight: bold;">
+                TENTANG & CONTACT
+            </p>
+        </div>
+    </div>
+</div>
+  <div class="container">
+      <div class="row">
+        <img src="{% static 'images/contact/profile.jpg' %}" alt="avatar" style="border-radius: 50%; height: 300px; width: 300px; margin-left: auto; margin-right: auto; margin-top: 30px; margin-bottom: 50px; filter: grayscale(100%);">
+            <p class="">
+            Firdaus Alfajar adalah seorang optimis yang tak tergoyahkan yang percaya pada masa depan yang cerah dan kemampuan kita untuk membangunnya bersama. Dia menemukan pola yang luar biasa tentang bagaimana para pemimpin dan organisasi terbesar berpikir, bertindak dan berkomunikasi.      
+        </p>
+    </div>
+    <div class="text-center">
+    <a href="https://www.facebook.com/firdaus.alfajar"><img src="{% static 'images/contact/facebook.svg' %}" alt="icon" style="height: 38px; width: 38px; position:sticky;"></a>
+    <a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox"><img src="{% static 'images/contact/gmail.svg' %}" alt="icon" style="height: 38px; width: 38px; position:sticky;"></a>
+    <img src="{% static 'images/contact/whatsapp.svg' %}" alt="icon" style="height: 38px; width: 38px; position:sticky;">
+    <a href="https://github.com/doerikeh"><img src="{% static 'images/contact/github.svg' %}" alt="icon" style="height: 38px; width: 38px; position:sticky;"></a>
+    <img src="{% static 'images/contact/instagram.svg' %}" alt="icon" style="height: 38px; width: 38px; position:sticky;">
+    </div>
+    <hr style="border-width: 10px;">
+    <h2 class="text-center" style="font-size: 40px;">Contact</h2>
+    {% include "include/contact_form.html" %}
+  </div>
+{% endblock %}

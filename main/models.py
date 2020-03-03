@@ -3,6 +3,7 @@ from datetime import datetime
 
 class BlogCategory(models.Model):
     blog_category = models.CharField(max_length=300)
+    image_category = models.ImageField(upload_to='images/blog/', blank=True)
     category_summary = models.CharField(max_length=300)
     category_slug = models.CharField(max_length=200)
 
