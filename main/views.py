@@ -9,11 +9,9 @@ from .forms import NewUserForm
 from .models import Blog, BlogCategory, BlogSeries
 
 
-
 def search(request):
     queryset1 = Blog.objects.all()
     queryset2 = BlogSeries.objects.all()
-
     query = request.GET.get('q')
     if query:
         queryset1 = queryset1.filter(
@@ -22,15 +20,13 @@ def search(request):
         queryset2 = queryset2.filter(
             Q(blog_series__icontains=query)
         ).distinct()
+
     context = {
         "queryset1": queryset1,
         "queryset2": queryset2
     }
 
     return render(request, "search.html", context)
-        
-
-
 
 def single_slug(request, single_slug):
     categories = [c.category_slug for c in BlogCategory.objects.all()]

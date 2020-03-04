@@ -6,7 +6,7 @@
             <h1 style="margin-left: auto; margin-right: auto;">Search</h1>
             {% for result1 in queryset1 %}
                 <div class="list-group" style="margin-bottom: 20px; width: 100%;">
-                    <a href="{{ result1.blog_slug }}" class="list-group-item list-group-item-action">
+                    <a href="/{{ result1.blog_slug }}" class="list-group-item list-group-item-action">
                         <div class="d-flex w-100 justify-content-between">
                             <h4>{{ result1.title }}</h4>
                             <small>{{ result1.published }}</small>
@@ -14,15 +14,15 @@
                     </a>
                 </div>
             {% endfor %}
-        {% for cat in queryset2 %}
+        {% for result2 in queryset2 %}
                 <div class="card-deck">
                     <div class="card bg-light mb-3" style="max-width: 18rem; margin-left: 30px;">
-                        <a href="{{ cat.category_slug }}", style="color: #000">
+                            <a href="/{{ result3.blog_slug }}", style="color: #000">
                         <!-- <div class="card-header">Category</div> -->
                         <div class="card-body">
-                        <h5 class="card-title text-center">{{ cat.blog_category }}</h5>
-                        <img class="card-img-top" src="{% if cat.image_category %}{{ cat.image_category.url }}{% else %}#{% endif %}" alt="">
-                        <p class="card-text">{{ cat.category_summary }}</p>
+                        <h5 class="card-title text-center">{{ result2.blog_series }}</h5>
+                        <img class="card-img-top" src="{% if result2.image_series %}{{ result2.image_series.url }}{% else %}#{% endif %}" alt="">
+                        <p class="card-text">{{ result2.series_summary }}</p>
                         </div>
                     </a></div>
                 </div>

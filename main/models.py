@@ -27,7 +27,7 @@ class BlogSeries(models.Model):
     image_series = models.ImageField(upload_to='images/blog/series/', blank=True)
     blog_category = models.ForeignKey(BlogCategory, verbose_name="Categories", default=1, on_delete=models.SET_DEFAULT)
     series_summary = models.CharField(max_length=200)
-
+    
     class Meta:
         verbose_name_plural = "Series"
     
@@ -43,4 +43,3 @@ class Blog(models.Model):
 
     def __str__(self):
         return self.title
-    
