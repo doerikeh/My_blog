@@ -27,9 +27,9 @@
           <a class="nav-link" href="contact/">Contact</a>
         </li>
       </ul>
-      <form class="form-inline">
+      <form class="form-inline" action="{% url 'main:search' %}">
           <input class="form-control form-control-sm mr-3 w-75" type="text" placeholder="Search"
-            aria-label="Search">
+            aria-label="Search" name="q">
             <i class="fas fa-search" style="color: aliceblue;"></i>
         </form>
     </div>

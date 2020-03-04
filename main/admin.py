@@ -24,7 +24,13 @@ class BlogAdmin(admin.ModelAdmin):
     search_fields = ('title', 'content', 'published')
 
 
+class BlogCategoryAdmin(admin.ModelAdmin):
+    list_display = ['blog_category', 'image_tag']
+    readonly_fields = ('image_tag', )
+    list_filter = ('blog_category', 'category_slug')
+
+
 
 admin.site.register(BlogSeries)
-admin.site.register(BlogCategory)
+admin.site.register(BlogCategory, BlogCategoryAdmin)
 admin.site.register(Blog, BlogAdmin)

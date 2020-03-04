@@ -8,17 +8,24 @@
                 <p style="font-size: 15px; text-align: center;">Published {{ blog.published }}</p>
                 {{blog.content|safe}}
             </div>
-            <ul class="collapse show"></br>
+            <ul class="collapse show" style="margin-top: 60px;"></br>
                 {% for blog in sidebar %}
                     {% if forloop.counter0 == this_id %}
                         <li class="active">
                             <div class="card-header" id="headingOne">{{blog.title}}<br>(Viewing)</div>
                         </li>
                     {% else %}
-                        <div class="accordion" id="accordionExample">
-                            <div class="card">
-                            <div class="card-header" id="headingOne">{{blog.title}}</div>
-                            <h class="mb-0" id="#sidebar">
+                    <div id="accordion">
+                        <div class="card">
+                          <div class="card-header" id="headingOne">
+                            <h5 class="mb-0">
+                              <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                <p style="color: black;">{{blog.title}}</p>
+                              </button>
+                            </h5>
+                          </div>
+                          <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                            <div class="card-body">
                                 <p style="justify-content: center; align-items: center; display: flex;">
                                     <a href="/{{blog.blog_slug}}">
                                         <button class="btn btn-info" href type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
@@ -26,8 +33,8 @@
                                         </button>
                                     </a>
                                 </p>
-                            </h2>
                             </div>
+                          </div>
                         </div>
                     {% endif %}
                 {% endfor %}
@@ -35,6 +42,10 @@
         </div>
     </div>
 {% endblock %}
+
+
+  
+      
    
 
 

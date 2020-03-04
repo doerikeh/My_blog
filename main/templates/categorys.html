@@ -9,7 +9,8 @@
                 <a href="{{partone}}", style="color: #000">
                 <!-- <div class="card-header">Category</div> -->
                 <div class="card-body">
-                  <h5 class="card-title">{{ blogs.blog_series }}</h5>
+                  <h5 class="card-title text-center" style="font-weight: bold;">{{ blogs.blog_series }}</h5>
+                  <img class="card-img-top" src="{% if blogs.image_series %}{{ blogs.image_series.url }}{% else %}#{% endif %}" alt="">
                   <p class="card-text">{{ blogs.series_summary }}</p>
                 </div>
               </a>

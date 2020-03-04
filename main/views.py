@@ -1,10 +1,36 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from .models import Blog, BlogCategory, BlogSeries
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import login, logout, authenticate
 from django.contrib import messages
+from django.db.models import Q
+
 from .forms import NewUserForm
+from .models import Blog, BlogCategory, BlogSeries
+
+
+
+def search(request):
+    queryset1 = Blog.objects.all()
+    queryset2 = BlogSeries.objects.all()
+
+    query = request.GET.get('q')
+    if query:
+        queryset1 = queryset1.filter(
+            Q(title__icontains=query) | Q(content__icontains=query) | Q(published__icontains=query)
+        ).distinct()
+        queryset2 = queryset2.filter(
+            Q(blog_series__icontains=query)
+        ).distinct()
+    context = {
+        "queryset1": queryset1,
+        "queryset2": queryset2
+    }
+
+    return render(request, "search.html", context)
+        
+
+
 
 def single_slug(request, single_slug):
     categories = [c.category_slug for c in BlogCategory.objects.all()]
